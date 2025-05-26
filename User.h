@@ -1,20 +1,20 @@
-/**
- * Project Class-Diagram-Progdas
- */
+#ifndef USER_H
+#define USER_H
 
-
-#ifndef _USER_H
-#define _USER_H
+#include <string>
+using std::string;
 
 class User {
-public: 
-    
-string getUsername();
-    
-string getPassword();
-private: 
+private:
     string username;
     string password;
+
+public:
+    User();
+    User(const string& username, const string& password);
+
+    string getUsername() const;
+    string getPassword() const;
 };
 
-#endif //_USER_H
+#endif

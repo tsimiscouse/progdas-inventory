@@ -1,21 +1,24 @@
-/**
- * Project Class-Diagram-Progdas
- */
+#ifndef CONTROLLER_H
+#define CONTROLLER_H
 
-
-#ifndef _CONTROLLER_H
-#define _CONTROLLER_H
+#include "Inventory.h"
+#include "AuthManager.h"
+#include <string>
+using std::string;
 
 class Controller {
-public: 
-    
-void mainMenu();
-    
-void userMenu();
-private: 
-    AuthManager authManager;
+private:
     string currentUser;
-    Inventory inventory;
+    Inventory* inventory;
+    AuthManager authManager;
+
+    void mainMenu();
+    void userMenu();
+
+public:
+    Controller();
+    ~Controller();
+    void run();
 };
 
-#endif //_CONTROLLER_H
+#endif

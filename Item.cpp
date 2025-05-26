@@ -1,72 +1,21 @@
-/**
- * Project Class-Diagram-Progdas
- */
-
-
 #include "Item.h"
+#include <iostream>
+using std::cout;
+using std::endl;
 
-/**
- * Item implementation
- */
+Item::Item() : kode(""), nama(""), jumlah(0) {}
 
+Item::Item(const string& kode, const string& nama, int jumlah)
+    : kode(kode), nama(nama), jumlah(jumlah) {}
 
-/**
- * @param kode
- * @param nama
- * @param jumlah
- */
-void Item::Item(string kode, string nama, int jumlah) {
+void Item::setKode(const string& kode) { this->kode = kode; }
+void Item::setNama(const string& nama) { this->nama = nama; }
+void Item::setJumlah(int jumlah) { this->jumlah = jumlah; }
 
-}
+string Item::getKode() const { return kode; }
+string Item::getNama() const { return nama; }
+int Item::getJumlah() const { return jumlah; }
 
-/**
- * @return string
- */
-string Item::getKode() {
-    return "";
-}
-
-/**
- * @return string
- */
-string Item::getNama() {
-    return "";
-}
-
-/**
- * @return int
- */
-int Item::getJumlah() {
-    return 0;
-}
-
-/**
- * @param namaBaru
- * @return void
- */
-void Item::setNama(string namaBaru) {
-    return;
-}
-
-/**
- * @param jumlahBaru
- * @return void
- */
-void Item::setJumlah(int jumlahBaru) {
-    return;
-}
-
-/**
- * @param kodeBaru
- * @return void
- */
-void Item::setKode(string kodeBaru) {
-    return;
-}
-
-/**
- * @return void
- */
-void Item::display() {
-    return;
+void Item::display() const {
+    cout << "Kode: " << kode << ", Nama: " << nama << ", Jumlah: " << jumlah << endl;
 }

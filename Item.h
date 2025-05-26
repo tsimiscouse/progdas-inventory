@@ -1,47 +1,28 @@
-/**
- * Project Class-Diagram-Progdas
- */
+#ifndef ITEM_H
+#define ITEM_H
 
-
-#ifndef _ITEM_H
-#define _ITEM_H
+#include <string>
+using std::string;
 
 class Item {
-public: 
-    
-/**
- * @param kode
- * @param nama
- * @param jumlah
- */
-void Item(string kode, string nama, int jumlah);
-    
-string getKode();
-    
-string getNama();
-    
-int getJumlah();
-    
-/**
- * @param namaBaru
- */
-void setNama(string namaBaru);
-    
-/**
- * @param jumlahBaru
- */
-void setJumlah(int jumlahBaru);
-    
-/**
- * @param kodeBaru
- */
-void setKode(string kodeBaru);
-    
-void display();
-private: 
+private:
     string kode;
     string nama;
     int jumlah;
+
+public:
+    Item();
+    Item(const string& kode, const string& nama, int jumlah);
+
+    void setKode(const string& kode);
+    void setNama(const string& nama);
+    void setJumlah(int jumlah);
+
+    string getKode() const;
+    string getNama() const;
+    int getJumlah() const;
+
+    void display() const;
 };
 
-#endif //_ITEM_H
+#endif

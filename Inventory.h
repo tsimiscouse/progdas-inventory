@@ -1,33 +1,27 @@
-/**
- * Project Class-Diagram-Progdas
- */
+#ifndef INVENTORY_H
+#define INVENTORY_H
 
-
-#ifndef _INVENTORY_H
-#define _INVENTORY_H
+#include "Item.h"
+#include <vector>
+#include <string>
+using std::vector;
+using std::string;
 
 class Inventory {
-public: 
-    
-/**
- * @param username
- */
-void Inventory(string username);
-    
-void loadData();
-    
-void saveData();
-    
-void addItem();
-    
-void getAllInventory();
-    
-void editItem();
-    
-void deteleItem();
-private: 
+private:
     vector<Item> items;
-    string username;
+    string username;  // Untuk file data per user
+
+public:
+    Inventory(const string& username);
+    const vector<Item>& getItems() const;
+    void loadData();
+    void saveData();
+
+    void addItem(const Item& item);
+    void editItem(const string& kode);
+    void deleteItem(const string& kode);
+    void getAllInventory() const;
 };
 
-#endif //_INVENTORY_H
+#endif

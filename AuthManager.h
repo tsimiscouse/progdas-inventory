@@ -1,26 +1,22 @@
-/**
- * Project Class-Diagram-Progdas
- */
+#ifndef AUTHMANAGER_H
+#define AUTHMANAGER_H
 
-
-#ifndef _AUTHMANAGER_H
-#define _AUTHMANAGER_H
+#include "User.h"
+#include <vector>
+#include <string>
+using std::vector;
+using std::string;
 
 class AuthManager {
-public: 
-    
-void registerUser();
-    
-/**
- * @param currentUser
- */
-bool login(string& currentUser);
-private: 
-    
-/**
- * @param username
- */
-bool usernameExists(string username);
+private:
+    vector<User> users;
+    void loadUsers();
+    void saveUser(const User& user);
+
+public:
+    AuthManager();
+    bool registerUser();
+    bool login(string& currentUser);
 };
 
-#endif //_AUTHMANAGER_H
+#endif

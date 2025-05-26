@@ -1,25 +1,9 @@
-/**
- * Project Class-Diagram-Progdas
- */
-
-
 #include "User.h"
 
-/**
- * User implementation
- */
+User::User() : username(""), password("") {}
 
+User::User(const string& username, const string& password) 
+    : username(username), password(password) {}
 
-/**
- * @return string
- */
-string User::getUsername() {
-    return "";
-}
-
-/**
- * @return string
- */
-string User::getPassword() {
-    return "";
-}
+string User::getUsername() const { return username; }
+string User::getPassword() const { return password; }
